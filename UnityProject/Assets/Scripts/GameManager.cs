@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         Score -= 85;
     }
 
-    private void Start() 
+    private void Awake() 
     {
         scoreHUD.SetActive(false);
         pauseHUD.SetActive(false);
