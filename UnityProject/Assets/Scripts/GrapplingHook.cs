@@ -39,12 +39,6 @@ public class GrapplingHook : MonoBehaviour
     {
         Rigidbody2D rigidBody2D = GetComponent<Rigidbody2D>();
 
-#if false
-        rigidBody2D.isKinematic     = true;
-        rigidBody2D.velocity        = Vector2.zero;
-        rigidBody2D.angularVelocity = 0.0f;
-#endif
-
         if (!hasJoint)
         {
             joint = gameObject.AddComponent<FixedJoint2D>();
