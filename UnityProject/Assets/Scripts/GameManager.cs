@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 {
     private static int Score = 500;
     public static GameObject selectedCar = null;
+
+    public static bool changed;
     private bool isPaused = false;
     public float gravity;
     public TextMeshProUGUI score;
