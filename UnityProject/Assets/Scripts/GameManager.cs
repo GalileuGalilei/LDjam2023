@@ -9,9 +9,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static int Score = 1000;
+    private bool isPaused = false;
     public float gravity;
     public TextMeshProUGUI score;
     public GameObject scoreHUD;
+    public GameObject pauseHUD;
     public GoalController goal;
 
     public static void SubtractScore()
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Start() 
     {
         scoreHUD.SetActive(false);
+        pauseHUD.SetActive(false);
         goal.OnFinishGame += OnFinishFase;
     }
 
@@ -31,11 +34,42 @@ public class GameManager : MonoBehaviour
         scoreHUD.SetActive(true);
     }
 
+    public void LoadFase(int fase)
+    {
+        if(isPaused)
+        {
+            Pause();
+        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Fase" + fase.ToString());
+    }
+
+    public void LoadMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Pause()
+    {
+        if(isPaused)
+        {
+            Time.timeScale = 1.0f;
+            pauseHUD.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0.0f;
+            pauseHUD.SetActive(true);
+        }
+
+        isPaused = !isPaused;
+    }
+
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            OnFinishFase();
+            Pause();
         }
     }
 }

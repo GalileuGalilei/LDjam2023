@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Terrain
   m_EditorClassIdentifier: 
   m_Angles:
-  - m_Start: -123
-    m_End: 137
+  - m_Start: -56
+    m_End: 59
     m_Order: 0
     m_Sprites:
     - {fileID: 21300000, guid: 03b2d1ca32693664a9dc9803799ecf78, type: 3}
