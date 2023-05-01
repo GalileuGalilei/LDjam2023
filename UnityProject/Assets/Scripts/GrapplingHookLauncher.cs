@@ -4,15 +4,13 @@ public class GrapplingHookLauncher: MonoBehaviour
 {
     public GrapplingHook grapplingHook;
     public GameObject    grapplingHookFixed;
+    public Rigidbody2D   mountPoint;
 
-    private Rigidbody2D     mountPoint;
     private DistanceJoint2D joint;
 
     public void Tie()
     {
-        mountPoint = gameObject.AddComponent<Rigidbody2D>();
-        joint      = gameObject.AddComponent<DistanceJoint2D>();
-
+        joint = gameObject.AddComponent<DistanceJoint2D>();
         joint.connectedBody = grapplingHook.GetComponent<Rigidbody2D>();
     }
 
@@ -22,12 +20,6 @@ public class GrapplingHookLauncher: MonoBehaviour
         {
             Destroy(joint);
             joint = null;
-        }
-
-        if (mountPoint != null)
-        {
-            Destroy(mountPoint);
-            mountPoint = null;
         }
     }
 
@@ -64,9 +56,9 @@ public class GrapplingHookLauncher: MonoBehaviour
         {
             joint.distance -= Time.deltaTime * 2.5f;
 
-            if (joint.distance < 1.0f)
+            if (joint.distance < 0.25f)
             {
-                joint.distance = 1.0f;
+                joint.distance = 0.25f;
             }
         }
     }

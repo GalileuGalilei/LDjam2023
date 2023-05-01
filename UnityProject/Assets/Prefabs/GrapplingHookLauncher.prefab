@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 314234476061925678}
   - component: {fileID: 4714861184351117675}
   - component: {fileID: 3097959983109560840}
-  - component: {fileID: 2547147227579542057}
   m_Layer: 0
   m_Name: GrapplingHook
   m_TagString: Untagged
@@ -138,24 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launcher: {fileID: 8596671421667931364}
---- !u!255 &2547147227579542057
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710727652024867410}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1 &3273738242002255018
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8175900062076991262}
+  - component: {fileID: 6391564992139496917}
   m_Layer: 0
   m_Name: GrapplingHookLauncher
   m_TagString: Untagged
@@ -273,6 +255,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &6391564992139496917
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752486774496217828}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8836197543293490964
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +287,8 @@ GameObject:
   - component: {fileID: 6390572357043540811}
   - component: {fileID: 5480055566144382882}
   - component: {fileID: 8596671421667931364}
+  - component: {fileID: 828163359005809017}
+  - component: {fileID: 716193079020723479}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Untagged
@@ -373,3 +378,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grapplingHook: {fileID: 3097959983109560840}
   grapplingHookFixed: {fileID: 3273738242002255018}
+  mountPoint: {fileID: 6391564992139496917}
+--- !u!50 &828163359005809017
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836197543293490964}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!255 &716193079020723479
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836197543293490964}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
