@@ -5,12 +5,13 @@ using UnityEngine;
 public class HookControler : MonoBehaviour
 {
     public RaycastHit2D hit;
+
     [SerializeField] LineControler lc;
     [SerializeField] CarController cc;
 
     void FixedUpdate ()
-    {
-        if(cc.selected)
+    {   
+        if(cc.selected && !GameManager.changed)
         {
             // convert mouse position into world coordinates
             Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -24,7 +25,16 @@ public class HookControler : MonoBehaviour
             if(Input.GetMouseButtonDown(0))
             {
                 Shoot();
+            } 
+            else if(Input.GetMouseButtonDown(1))
+            {
+                Physics2D.Raycast(transform.position, transform.up, 0);
+                lc.DisableLine();
             }
+        }
+        else if(GameManager.changed)
+        {
+            GameManager.changed = false;
         }
 
 
@@ -49,6 +59,7 @@ public class HookControler : MonoBehaviour
         {
             lc.DisableLine();
         }
+        Debug.Log(hit);
     }
 
     private void Move ()
