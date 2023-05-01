@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GrapplingHook : MonoBehaviour
 {
+    public GrapplingHookLauncher launcher;
+
     private const float GRAPPLE_STRENGTH = 10.0f;
 
     private FixedJoint2D joint;
@@ -37,8 +39,6 @@ public class GrapplingHook : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Rigidbody2D rigidBody2D = GetComponent<Rigidbody2D>();
-
         if (!hasJoint)
         {
             joint = gameObject.AddComponent<FixedJoint2D>();
@@ -46,5 +46,7 @@ public class GrapplingHook : MonoBehaviour
         }
 
         hasJoint = true;
+
+        launcher.Tie();
     }
 }
