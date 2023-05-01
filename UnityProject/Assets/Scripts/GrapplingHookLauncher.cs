@@ -8,6 +8,7 @@ public class GrapplingHookLauncher: MonoBehaviour
     private void Start()
     {
         grapplingHookFixed.SetActive(true);
+        grapplingHook.Retract();
     }
 
     void Update()
