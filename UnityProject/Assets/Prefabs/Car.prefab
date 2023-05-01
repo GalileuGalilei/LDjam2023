@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc69a0443c4a3c4194d0ef7730a2ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  isConnect: 1
 --- !u!1 &6524351539661367536
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hook
       objectReference: {fileID: 0}
+    - target: {fileID: 6547023205266921497, guid: fb25f0cde9ed8be6ca6a9c888dd718a9, type: 3}
+      propertyPath: cc
+      value: 
+      objectReference: {fileID: 2313202287312855600}
     - target: {fileID: 6547023205266921498, guid: fb25f0cde9ed8be6ca6a9c888dd718a9, type: 3}
       propertyPath: m_RootOrder
       value: 3

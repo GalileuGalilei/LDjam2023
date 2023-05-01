@@ -5,12 +5,14 @@ using UnityEngine.UIElements;
 
 public class CarController : MonoBehaviour
 {
+    public bool selected;
     Rigidbody2D rb;
     public bool isConnect = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        selected = false;
     }
 
     private void FixedUpdate()
@@ -23,9 +25,10 @@ public class CarController : MonoBehaviour
         Collider2D collider = gameObject.GetComponent<Collider2D>();
         if (collider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
-            if(Input.GetMouseButtonDown(0)) 
+            if(Input.GetMouseButtonDown(1)) 
             {
                 GameManager.selectedCar = this.gameObject.transform.parent.gameObject;
+                selected = !selected;
                 Debug.Log("Selected car: " + GameManager.selectedCar.name);
             }
         }

@@ -6,11 +6,11 @@ public class HookControler : MonoBehaviour
 {
     public RaycastHit2D hit;
     [SerializeField] LineControler lc;
+    [SerializeField] CarController cc;
 
     void FixedUpdate ()
     {
-        Debug.Log(GameManager.selectedCar.name);
-        if(GameManager.selectedCar == this.transform.parent.gameObject)
+        if(cc.selected)
         {
             // convert mouse position into world coordinates
             Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,12 +25,14 @@ public class HookControler : MonoBehaviour
             {
                 Shoot();
             }
-
-            if(hit)
-            {
-                Move();
-            }
         }
+
+
+        if(hit)
+        {
+            Move();
+        }
+
         UpdatePosition();
     }
 
@@ -53,9 +55,9 @@ public class HookControler : MonoBehaviour
     {
         Rigidbody2D righi = transform.parent.gameObject.transform.GetChild(0).GetComponent<Rigidbody2D>();
         Vector2 vec = new Vector2(hit.point.x - transform.position.x, hit.point.y - transform.position.y).normalized;
-        righi.AddForce(vec * 130);
+        righi.AddForce(vec * 160);
         lc.UpdatePosition(transform.position, hit.point);
-        Debug.DrawRay(transform.position, vec * 10, Color.cyan);
+        Debug.DrawRay(transform.position, vec * 15, Color.cyan);
     }
 
     private void UpdatePosition ()
