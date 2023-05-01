@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float gravity;
     public TextMeshProUGUI score;
     public GameObject scoreHUD;
+    public GoalController goal;
 
     public static void SubtractScore()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     private void Start() 
     {
         scoreHUD.SetActive(false);
+        goal.OnFinishGame += OnFinishFase;
     }
 
     private void OnFinishFase()
