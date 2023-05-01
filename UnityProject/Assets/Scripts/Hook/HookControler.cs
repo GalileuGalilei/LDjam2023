@@ -6,22 +6,27 @@ public class HookControler : MonoBehaviour
 {
     public RaycastHit2D hit;
     [SerializeField] LineControler lc;
+    [SerializeField] CarController cc;
 
     void FixedUpdate ()
     {
-        // convert mouse position into world coordinates
-        Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
- 
-        // get direction you want to point at
-        Vector2 direction = (mouseScreenPosition - (Vector2) transform.position).normalized;
- 
-        // set vector of transform directly
-        transform.up = direction;
-
-        if(Input.GetMouseButtonDown(0))
+        if(cc.selected)
         {
-            Shoot();
+            // convert mouse position into world coordinates
+            Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    
+            // get direction you want to point at
+            Vector2 direction = (mouseScreenPosition - (Vector2) transform.position).normalized;
+    
+            // set vector of transform directly
+            transform.up = direction;
+
+            if(Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
+
 
         if(hit)
         {
@@ -50,13 +55,13 @@ public class HookControler : MonoBehaviour
     {
         Rigidbody2D righi = transform.parent.gameObject.transform.GetChild(0).GetComponent<Rigidbody2D>();
         Vector2 vec = new Vector2(hit.point.x - transform.position.x, hit.point.y - transform.position.y).normalized;
-        righi.AddForce(vec * 130);
+        righi.AddForce(vec * 160);
         lc.UpdatePosition(transform.position, hit.point);
-        Debug.DrawRay(transform.position, vec * 10, Color.cyan);
+        Debug.DrawRay(transform.position, vec * 15, Color.cyan);
     }
 
     private void UpdatePosition ()
     {
-        transform.position = transform.parent.gameObject.transform.GetChild(0).position;
+        transform.position = transform.parent.gameObject.transform.GetChild(0).position + new Vector3(0, 0.45f, 0);
     }
 }
