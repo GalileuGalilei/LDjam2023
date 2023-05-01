@@ -9,25 +9,28 @@ public class HookControler : MonoBehaviour
 
     void FixedUpdate ()
     {
-        // convert mouse position into world coordinates
-        Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
- 
-        // get direction you want to point at
-        Vector2 direction = (mouseScreenPosition - (Vector2) transform.position).normalized;
- 
-        // set vector of transform directly
-        transform.up = direction;
-
-        if(Input.GetMouseButtonDown(0))
+        Debug.Log(GameManager.selectedCar.name);
+        if(GameManager.selectedCar == this.transform.parent.gameObject)
         {
-            Shoot();
-        }
+            // convert mouse position into world coordinates
+            Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    
+            // get direction you want to point at
+            Vector2 direction = (mouseScreenPosition - (Vector2) transform.position).normalized;
+    
+            // set vector of transform directly
+            transform.up = direction;
 
-        if(hit)
-        {
-            Move();
-        }
+            if(Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
 
+            if(hit)
+            {
+                Move();
+            }
+        }
         UpdatePosition();
     }
 
@@ -57,6 +60,6 @@ public class HookControler : MonoBehaviour
 
     private void UpdatePosition ()
     {
-        transform.position = transform.parent.gameObject.transform.GetChild(0).position;
+        transform.position = transform.parent.gameObject.transform.GetChild(0).position + new Vector3(0, 0.45f, 0);
     }
 }
