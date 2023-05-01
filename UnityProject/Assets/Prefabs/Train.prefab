@@ -119,8 +119,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 764426151320076752}
-  m_BreakForce: 1000
-  m_BreakTorque: 1000
+  m_BreakForce: 2500
+  m_BreakTorque: 2500
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5000001, y: -0.00000091176935}
   m_ConnectedAnchor: {x: 0.43536243, y: -0.43000042}
@@ -407,8 +407,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 764426150043707720}
-  m_BreakForce: 1000
-  m_BreakTorque: 1000
+  m_BreakForce: 1500
+  m_BreakTorque: 1500
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5000001, y: -0.00000091176935}
   m_ConnectedAnchor: {x: 0.4090988, y: -0.43000042}
