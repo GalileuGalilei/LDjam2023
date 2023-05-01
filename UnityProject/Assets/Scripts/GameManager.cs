@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     private void OnFinishFase()
     {
         score.text = "Score: " + Score.ToString();
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         scoreHUD.SetActive(true);
     }
 
