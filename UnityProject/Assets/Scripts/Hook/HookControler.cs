@@ -9,32 +9,35 @@ public class HookControler : MonoBehaviour
     [SerializeField] LineControler lc;
     [SerializeField] CarController cc;
 
-    void FixedUpdate ()
-    {   
-        if(cc.selected)
+    void Update()
+    {
+        if (cc.selected)
         {
             // convert mouse position into world coordinates
             Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    
+
             // get direction you want to point at
-            Vector2 direction = (mouseScreenPosition - (Vector2) transform.position).normalized;
-    
+            Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
+
             // set vector of transform directly
             transform.up = direction;
 
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 Shoot();
-            } 
-            else if(Input.GetMouseButtonDown(1))
+            }
+            else if (Input.GetMouseButtonDown(1))
             {
                 Physics2D.Raycast(transform.position, transform.up, 0);
                 lc.DisableLine();
             }
         }
 
+    }
 
-        if(hit)
+    private void FixedUpdate()
+    {
+        if (hit)
         {
             Move();
         }
@@ -44,9 +47,10 @@ public class HookControler : MonoBehaviour
 
     private void Shoot ()
     {
+        Debug.Log("atira filgo.");
         Ray ray = new Ray(transform.position, transform.up);
         Debug.DrawRay(transform.position, transform.up * 1000, Color.cyan);
-        hit = Physics2D.Raycast(transform.position, transform.up, 10);
+        hit = Physics2D.Raycast(transform.position, transform.up, 25);
         if(hit)
         {   
             lc.SetUpLine();
