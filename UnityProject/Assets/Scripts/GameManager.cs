@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private static int Score = 1000;
+    private static int Score = 500;
     public static GameObject selectedCar = null;
     private bool isPaused = false;
     public float gravity;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public static void SubtractScore()
     {
-        Score -= 45;
+        Score -= 85;
     }
 
     private void Start() 

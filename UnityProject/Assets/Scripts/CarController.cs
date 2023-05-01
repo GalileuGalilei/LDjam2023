@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class CarController : MonoBehaviour
 {
     Rigidbody2D rb;
+    public bool isConnect = true;
 
     private void Start()
     {
