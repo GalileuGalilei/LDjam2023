@@ -15,6 +15,15 @@ public class CutSceneController : MonoBehaviour
         player.loopPointReached += LoadFase1;
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            player.Stop();
+            SceneManager.LoadScene("Fase1");
+        }
+    }
+
     private void LoadFase1(VideoPlayer source)
     {
         source.Stop();

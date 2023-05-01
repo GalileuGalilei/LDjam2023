@@ -21,17 +21,5 @@ public class CarController : MonoBehaviour
         {
             rb.velocity *= 0.995f;
         }
-
-        Collider2D collider = gameObject.GetComponent<Collider2D>();
-        if (collider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
-        {
-            if(Input.GetMouseButtonDown(0)) 
-            {
-                GameManager.selectedCar = this.gameObject.transform.parent.gameObject;
-                selected = !selected;
-                GameManager.changed = true;
-                Debug.Log("Selected car: " + GameManager.selectedCar.name);
-            }
-        }
     }
 }
