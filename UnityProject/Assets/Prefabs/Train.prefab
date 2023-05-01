@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5988699589715189248, guid: 6a204c3eabf6bfe2fb2aa3b82743ea82, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7587927410248857283, guid: 6a204c3eabf6bfe2fb2aa3b82743ea82, type: 3}
       propertyPath: m_Name
       value: Truck
@@ -745,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 2438267481641275914, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433994302133763443, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6920104756551603346, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_Mass
@@ -837,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.046649624
       objectReference: {fileID: 0}
+    - target: {fileID: 4433994302133763443, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6920104756551603346, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_Mass
       value: 10
@@ -928,6 +940,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.02283942
       objectReference: {fileID: 0}
+    - target: {fileID: 4433994302133763443, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6920104756551603346, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_Mass
       value: 10
@@ -1014,6 +1030,10 @@ PrefabInstance:
     - target: {fileID: 3555894003498967666, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433994302133763443, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6920104756551603346, guid: 1a09c57e15129d44e99e01901e1e16fb, type: 3}
       propertyPath: m_Mass
