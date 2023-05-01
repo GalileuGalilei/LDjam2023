@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2761759570205983380}
   - component: {fileID: 2067136531626837063}
   - component: {fileID: 8690273894376192143}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: left_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3006563667756966069}
   - component: {fileID: 8460735534208882533}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
