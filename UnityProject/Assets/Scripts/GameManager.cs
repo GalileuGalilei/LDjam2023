@@ -9,15 +9,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static int Score = 500;
-    public static GameObject selectedCar = null;
-
-    public static bool changed;
     private bool isPaused = false;
     public float gravity;
     public TextMeshProUGUI score;
     public GameObject scoreHUD;
     public GameObject pauseHUD;
     public GoalController goal;
+
+    [SerializeField] GameObject train;
 
     public static void SubtractScore()
     {
@@ -75,6 +74,19 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
+        }
+        VerifySelect();
+    }
+
+    private void VerifySelect()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if(Input.GetKeyDown((i + 1).ToString()))
+            {
+                Debug.Log("Cheguei");
+                train.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<CarController>().selected = !train.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<CarController>().selected;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ public class HookControler : MonoBehaviour
 
     void FixedUpdate ()
     {   
-        if(cc.selected && !GameManager.changed)
+        if(cc.selected)
         {
             // convert mouse position into world coordinates
             Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -31,10 +31,6 @@ public class HookControler : MonoBehaviour
                 Physics2D.Raycast(transform.position, transform.up, 0);
                 lc.DisableLine();
             }
-        }
-        else if(GameManager.changed)
-        {
-            GameManager.changed = false;
         }
 
 
