@@ -9,6 +9,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static int Score = 1000;
+    public static GameObject selectedCar = null;
     private bool isPaused = false;
     public float gravity;
     public TextMeshProUGUI score;
